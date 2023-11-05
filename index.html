@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EXTENSION_NAME</title>
+    <link id="myStyle" rel="stylesheet" href="css/style.css"/>
+</head>
+<body id="body">
+    <div class="container">
+        <header class="row">
+            <h1>Silence Remover</h1>
+        </header>
+        
+        <div class="row">
+            <h5>Remove Silence</h5>
+        </div>
+        
+        <div class="row">
+            <button id="executeCommand">Remove Silence</button>
+        </div>
+        
+        <div class="row">
+            <div class="slidecontainer">
+                <h5>Silence Sensitivity</h5>
+                <div class="slider-container">
+                    <input type="range" min="1" max="100" value="20" class="slider" id="silenceSensitivity">
+                    <span id="rangeValue" class="range-value"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingBarContainer" class="loading-bar-container">
+            <div id="loadingBar" class="loading-bar"></div>
+        </div>
+        
+        <!-- Add more UI elements here as needed -->
+    </div>
+
+    <script src="./lib/CSInterface.js"></script>
+    <script src="./js/themeManager.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

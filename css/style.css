@@ -1,0 +1,182 @@
+/* style.css */
+body {
+    font-family: "Segoe UI", "Arial", sans-serif;
+    background-color: #323232;
+    color: #d7d7d7;
+    margin: 0;
+    padding: 20px;
+    overflow-y: auto; /* In case the content overflows */
+}
+
+h1, h5 {
+    margin: 0;
+    padding: 5px 0;
+    line-height: 1.2;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+h5 {
+    color: #bbbbbb;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4b4b4b;
+    border: 1px solid #666;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    outline: none;
+    width: 100%; /* Makes the button expand to the container width */
+    box-sizing: border-box; /* Includes padding in the width */
+}
+
+button:hover {
+    background-color: #5c5c5c;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+}
+
+.range-value {
+    position: absolute;
+    background: #323232; /* Same as body background for "cut-out" effect */
+    color: white;
+    padding: 0 5px; /* Small padding for the label */
+    border-radius: 3px; /* Optional: rounded corners for the label */
+    transform: translateX(-50%); /* Center the element on the handle */
+    user-select: none; /* Prevent text selection */
+}
+
+
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%; /* Adjust width to fit next to the value display */
+    height: 4px;
+    border-radius: 2px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+    display: inline-block; /* Align with the value display */
+    vertical-align: middle; /* Align with the value display */
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #0072d5;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #0072d5;
+    cursor: pointer;
+}
+
+#rangeValue {
+    font-family: "Segoe UI", "Arial", sans-serif;
+    color: #d7d7d7;
+    position: absolute;
+    /* Make background transparent or the same as the slider track */
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent */
+    padding: 5px 0px; /* Small padding for the label */
+    border-radius: 3px; /* Optional: rounded corners for the label */
+    transform: translateX(-50%) translateY(-150%); /* Adjust vertical position */
+    user-select: none; /* Prevent text selection */
+    visibility: hidden;
+}
+
+.error-message {
+    color: #ff5555;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted white; /* If you want a dotted underline */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px; /* Use half of the width (120px/2) to center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Additional structural styling for layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.loading-bar-container {
+    width: 100%;
+    background-color: #ddd;
+    display: none; /* Hidden by default */
+    position: relative; /* If you want it to be in a specific place */
+}
+
+.loading-bar {
+    height: 30px;
+    width: 0%; /* Initial width */
+    background-color: #4CAF50;
+    text-align: center; /* If you want to put text inside it */
+    line-height: 30px; /* Align text vertically */
+    color: white;
+    transition: width 0.5s; /* Smooth transition for width changes */
+}
